@@ -15,18 +15,26 @@ const MEMBERS: Member[] = [
   { id: 17, name: "あすにゃん" },
 ];
 
+
 @Component({
   selector: 'my-app',
-  template: `
+  template:`
     <h1>{{title}}</h1>
     <h2>住人一覧</h2>
     <ul class="members">
-      <li *ngFor="let member of members">
-        <span class="badge">id: {{member.id}}</span> {{member.name}}
+      <li *ngFor="let member of members" (click)="onSelect(member)" [class.selected]="member === selectedMember">
+        <span class="badge">{{member.id}}</span> {{member.name}}
       </li>
     </ul>
-    `
-  ,
+    <div *ngIf= "selectedMember">
+      <h2>{{selectedMember.name}}</h2>
+      <div><label>id: </label>{{selectedMember.id}}</div>
+      <div>
+        <label>name: </label>
+        <input type="text" [(ngModel)]="selectedMember.name" placeholder="名前">
+      </div>
+    </div>
+  `,
   styles: [`
     .selected {
       background-color: #CFD8DC !important;
@@ -75,11 +83,14 @@ const MEMBERS: Member[] = [
       margin-right: .8em;
       border-radius: 4px 0 0 4px;
     }
-`]
+  `]
 })
-
-export class AppComponent{
-  title = "曙ハウス名簿";
+export class AppComponent  {
+  title = '曙ハウス名簿';
   members = MEMBERS;
+  selectedMember: Member;
 
+  onSelect(member: Member): void {
+    this.selectedMember = member;
+  }
 }
