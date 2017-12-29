@@ -21,6 +21,7 @@ const MEMBERS: Member[] = [
         <span class="badge">{{member.id}}</span> {{member.name}}
       </li>
     </ul>
+    <member-detail [member]= "selectedMember"></member-detail>
   `,
   styles: [`
     .selected {
