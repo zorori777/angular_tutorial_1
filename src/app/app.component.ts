@@ -11,7 +11,10 @@ export class Member {
     <h1>{{title}}</h1>
     <h2>{{member.name}}</h2>
     <div><label>id:</label> {{member.id}}</div>
-    <div><label>name:</label> {{member.name}}</div>
+    <div>
+      <label>name:</label>
+      <input type="text" [(ngModel)]= "member.name" placeholder= "名前">
+    </div>
     `,
 })
 
