@@ -1,15 +1,7 @@
 import { Component } from '@angular/core';
 import { Member } from "./member";
 
-const MEMBERS: Member[] = [
-  { id: 11, name: "えだまめ" },
-  { id: 12, name: "わたしゃん" },
-  { id: 13, name: "ざこれいじ" },
-  { id: 14, name: "ウメキチ師匠" },
-  { id: 15, name: "だいきぱいせん" },
-  { id: 16, name: "ことむ" },
-  { id: 17, name: "あすにゃん" },
-];
+import { MemberService } from "./member.service"
 
 @Component({
   selector: 'my-app',
@@ -75,7 +67,7 @@ const MEMBERS: Member[] = [
 })
 export class AppComponent  {
   title = '曙ハウス名簿';
-  members = MEMBERS;
+  members = Member[];
   selectedMember: Member;
 
   onSelect(member: Member): void {
