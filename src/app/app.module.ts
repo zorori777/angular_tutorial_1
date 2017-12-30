@@ -15,8 +15,18 @@ import { MemberService } from "./member.service"
     FormsModule,
     RouterModule.forRoot([
       {
+        path: "",
+        redirectTo: "/",
+        pathMatch: "full"
+      }
+      ,
+      {
         path: 'members',
         component: MembersComponent
+      },
+      {
+        path: "dashboard",
+        component: DashboardComponent
       }
     ])
   ],
