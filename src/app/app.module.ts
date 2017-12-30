@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { MemberDetailComponent} from "./member-detail.component";
+import { MembersComponent } from "./members.component";
+import { MemberService } from "./member.service"
 
 @NgModule({
   imports:      [
@@ -12,10 +14,12 @@ import { MemberDetailComponent} from "./member-detail.component";
   ],
   declarations: [
     AppComponent,
-    MemberDetailComponent
+    MemberDetailComponent,
+    MembersComponent
   ],
   bootstrap:    [
     AppComponent
-  ]
+  ],
+  providers: [ MemberService ]
 })
 export class AppModule { }
