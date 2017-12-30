@@ -63,14 +63,22 @@ import { MemberService } from "./member.service"
       margin-right: .8em;
       border-radius: 4px 0 0 4px;
     }
-  `]
+  `],
+  providers: [ MemberService ]
 })
 export class AppComponent  {
   title = '曙ハウス名簿';
   members = Member[];
   selectedMember: Member;
 
+  constructor(private memberService: MemberService){}
+
   onSelect(member: Member): void {
     this.selectedMember = member;
+  }
+
+  getMembers(): void {
+    this.members = this.getMembers();
+
   }
 }
