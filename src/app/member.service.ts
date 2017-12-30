@@ -3,7 +3,7 @@ import { Member } from "./member"
 import { MEMBERS } from "./mock-members"
 
 @Injectable()
-export class MemberService {
+export class MemberService{
   getMembers(): Member[]{
     return MEMBERS;
   }
