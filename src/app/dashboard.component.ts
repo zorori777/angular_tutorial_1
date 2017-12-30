@@ -16,7 +16,7 @@ export class DashboardComponent {
 
   ngOnInit() {
     this.memberService.getMembers().then(members => this.members
-    = members);
+    = members.slice(1, 5));
   }
 }
 
