@@ -82,6 +82,6 @@ export class AppComponent implements OnInit {
   }
 
   getMembers(): void {
-    this.members = this.memberService.getMembers();
+    this.memberService.getMembers().then(members => this.members = members);
   }
 }
