@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from "@angular/router"
 
 import { AppComponent }  from './app.component';
+import { DashboardComponent} from "./dashboard.component"
 import { MemberDetailComponent } from "./member-detail.component";
-import { MembersComponent } from "./members.component";
+import { MembersComponent } from "./members.component"
 import { MemberService } from "./member.service"
 
 @NgModule({
@@ -14,13 +15,24 @@ import { MemberService } from "./member.service"
     FormsModule,
     RouterModule.forRoot([
       {
+        path: "",
+        redirectTo: "/",
+        pathMatch: "full"
+      }
+      ,
+      {
         path: 'members',
         component: MembersComponent
+      },
+      {
+        path: "dashboard",
+        component: DashboardComponent
       }
     ])
   ],
   declarations: [
     AppComponent,
+    DashboardComponent,
     MemberDetailComponent,
     MembersComponent
   ],
