@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from "@angular/router"
 
 import { AppComponent }  from './app.component';
+import { DashboardComponent} from "./dashboard.component"
 import { MemberDetailComponent } from "./member-detail.component";
-import { MembersComponent } from "./members.component";
+import { MembersComponent } from "./members.component"
 import { MemberService } from "./member.service"
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MemberService } from "./member.service"
   ],
   declarations: [
     AppComponent,
+    DashboardComponent,
     MemberDetailComponent,
     MembersComponent
   ],
