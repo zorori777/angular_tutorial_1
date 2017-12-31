@@ -7,7 +7,8 @@ import { MemberService } from "./member.service";
 
 @Component({
   selector: "member-detail",
-  templateUrl: "./member-detail.component.html"
+  templateUrl: "./member-detail.component.html",
+  styleUrls: ["./member-detail.component.css"]
 })
 
 export class MemberDetailComponent implements OnInit {

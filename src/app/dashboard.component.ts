@@ -5,7 +5,8 @@ import { MemberService } from "./member.service";
 
 @Component({
   selector: "my-dashbord",
-  templateUrl: "./dashboard.component.html"
+  templateUrl: "./dashboard.component.html",
+  styleUrls: ["./dashboard.component.css"]
 })
 
 export class DashboardComponent {
