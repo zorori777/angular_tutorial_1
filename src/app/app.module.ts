@@ -8,31 +8,13 @@ import { DashboardComponent} from "./dashboard.component"
 import { MemberDetailComponent } from "./member-detail.component";
 import { MembersComponent } from "./members.component"
 import { MemberService } from "./member.service"
+import { AppRoutingModule } from "./app-routing.module"
 
 @NgModule({
   imports:      [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([
-      {
-        path: "",
-        redirectTo: "/",
-        pathMatch: "full"
-      }
-      ,
-      {
-        path: 'members',
-        component: MembersComponent
-      },
-      {
-        path: "dashboard",
-        component: DashboardComponent
-      },
-      {
-        path: "detail/:id",
-        component: MemberDetailComponent
-      }
-    ])
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
