@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from "@angular/router"
+import { RouterModule, Routes } from "@angular/router";
 
-import { DashboardComponent} from "./dashboard.component"
+import { DashboardComponent} from "./dashboard.component";
 import { MemberDetailComponent } from "./member-detail.component";
-import { MembersComponent } from "./members.component"
+import { MembersComponent } from "./members.component";
 
 const routes: Routes = [
   {
@@ -29,6 +29,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes)
+
   ],
   exports: [
     RouterModule
