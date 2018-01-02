@@ -34,4 +34,13 @@ export class MembersComponent implements OnInit {
     this.router.navigate(['/detail', this.selectedMember.id]);
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return };
+    this.memberService.create(name)
+      .then(member => {
+        this.members.push(member);
+        this.selectedMember = null;
+      })
+  }
 }

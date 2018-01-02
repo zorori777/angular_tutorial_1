@@ -6,6 +6,7 @@ import "rxjs/add/operator/toPromise";
 import { Member } from "./member";
 import { MEMBERS } from "./mock-members";
 import { toPromise } from "rxjs/operator/toPromise";
+import { Jsonp } from "@angular/http/src/http";
 
 @Injectable()
 export class MemberService{
@@ -35,11 +36,18 @@ export class MemberService{
     return Promise.reject(error.message || error);
   }
 
-  update(member: Member) {
+  update(member: Member): Promise<Member> {
     const url = `${this.membersUrl}/${member.id}`;
     return this.http.put(url, JSON.stringify(member), { headers: this.headers })
     .toPromise()
     .then(() => toPromise)
+    .catch(this.handleError);
+  }
+
+  create(name: string): Promise<Member> {
+    return this.http.post(this.membersUrl, JSON.stringify({ name: name }), { headers: this.headers })
+    .toPromise()
+    .then(response => response.json().data as Member)
     .catch(this.handleError);
   }
 
