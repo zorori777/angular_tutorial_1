@@ -7,6 +7,7 @@
 <ul class="members">
   <li *ngFor="let member of members" (click)="onSelect(member)" [class.selected]="member === selectedMember">
     <span class="badge">{{member.id}}</span> {{member.name}}
+    <button class ="delete" (click) = "delete(member); $evet.stopPropagation()">☓</button>
   </li>
 </ul>
 <div *ngIf="selectedMember">

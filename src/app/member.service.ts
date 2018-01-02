@@ -51,4 +51,12 @@ export class MemberService{
     .catch(this.handleError);
   }
 
+  delete(id: number): Promise<Member> {
+    const url = `${this.membersUrl}/${id}`;
+    return this.http.delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
+
 }
